@@ -2,17 +2,17 @@
 
 React app standard is a project that uses ReactJS as the main framework. It contains standard library for collaborate with other developers. The project is still on going and try to get rid of unnecessary library,
 
-## Use
+## Using
 
-### Core
+### Development support
 - React
 - Webpack 
 - Typescript
 - Eslint
 - Husky
 
-### Support Code
-- Redux Presist
+### Library supporting code
+- Redux Persist
 - Redux Toolkit
 - React Toastify
 - React Hook Form
@@ -22,11 +22,14 @@ React app standard is a project that uses ReactJS as the main framework. It cont
 
 ### Existing code
 - Atomic design directory structure
-- Code remember me login
-- Cannot commit a code if not a clean code
+- Code remember and not remember me login with Redux Persist
+- Automatic check and fix code before commit with Husky and Eslint
 - Page not found
 - Protected Route
 - Error Boundary
+
+### Additional Eslint rules
+- Automatic fix sorting import
 
 ## Installation
 

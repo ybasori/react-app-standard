@@ -2,7 +2,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import React, { Suspense } from "react";
 import { Provider } from "react-redux";
-import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
