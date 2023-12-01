@@ -9,4 +9,17 @@ git stash --keep-index
 # Run ESLint on staged files
 npx eslint $staged_files --fix || true
 
+# Check ESLint exit status
+eslint_exit_status=$?
+
 git stash pop 
+
+# Pop stashed changes only if ESLint ran successfully
+if [ $eslint_exit_status -eq 0 ]; then
+  echo "ESLint success"
+else
+  echo "ESLint found errors. Stashed changes were not popped."
+fi
+
+# Exit with the ESLint exit status
+exit $eslint_exit_status
