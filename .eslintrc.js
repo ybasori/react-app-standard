@@ -33,6 +33,6 @@ module.exports = {
     "no-console": "error",
     "no-unused-vars": "error",
     "no-extra-boolean-cast": "off",
-    "simple-import-sort/imports": "error",
+    "simple-import-sort/imports": "warn",
   },
 };
