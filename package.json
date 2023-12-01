@@ -13,6 +13,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "html-webpack-plugin": "^5.5.3",
+    "lint-staged": "^15.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
@@ -38,6 +39,11 @@
     "build-storybook": "storybook build",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run lint"
+    ]
+  },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
@@ -53,6 +59,7 @@
     "css-loader": "^6.8.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "husky": "^8.0.0",
     "prop-types": "^15.8.1",
     "sass-loader": "^13.3.2",
     "storybook": "^7.5.3",
@@ -60,7 +67,6 @@
     "ts-loader": "^9.5.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "webpack-bundle-analyzer": "^4.10.1",
-    "webpack-dev-server": "^4.15.1",
-    "husky": "^8.0.0"
+    "webpack-dev-server": "^4.15.1"
   }
 }
