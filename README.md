@@ -1,6 +1,29 @@
 # React app standard
 
-React app standard is a project that uses ReactJS as the main framework. It contains standard library for collaborate with other developers. 
+React app standard is a project that uses ReactJS as the main framework. It contains standard library for collaborate with other developers. The project is still on going and try to get rid of unnecessary library,
+
+## Use
+
+### Core
+- React
+- Webpack 
+- Typescript
+- Eslint
+- Husky
+
+### Support Code
+- Redux Presist
+- Redux Toolkit
+- React Toastify
+- React Hook Form
+- Yup Resolver
+- React Router Dom
+- Axios
+
+### Methods
+- Atomic design directory structure
+- Code remember me login
+- Cannot commit a code if not a clean code
 
 ## Installation
 
