@@ -27,7 +27,7 @@ const logger: Middleware = (api) => (next) => (action) => {
   // const afterState = api.getState();
 
   // const withZero = (value: number) => (value < 10 ? `0${value}` : `${value}`);
-  // // cekin
+  // // ceking
   // const dt = new Date();
   // const t = `${withZero(dt.getHours())}:${withZero(dt.getMinutes())}:${withZero(
   //   dt.getSeconds()
