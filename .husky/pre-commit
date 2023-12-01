@@ -17,6 +17,7 @@ if [ $eslint_exit_status -eq 0 ]; then
   echo "ESLint success"
 else
   echo "ESLint found errors. Stashed changes were not popped."
+  git stash pop 
 fi
 
 

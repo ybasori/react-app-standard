@@ -22,23 +22,23 @@ const reducers = combineReducers({
 });
 
 const logger: Middleware = (api) => (next) => (action) => {
-  const beforeState = api.getState();
+  // const beforeState = api.getState();
   const response = next(action);
-  const afterState = api.getState();
+  // const afterState = api.getState();
 
-  const withZero = (value: number) => (value < 10 ? `0${value}` : `${value}`);
-  // ceki
-  const dt = new Date();
-  const t = `${withZero(dt.getHours())}:${withZero(dt.getMinutes())}:${withZero(
-    dt.getSeconds()
-  )}.${dt.getMilliseconds()}`;
+  // const withZero = (value: number) => (value < 10 ? `0${value}` : `${value}`);
+  // // cekin
+  // const dt = new Date();
+  // const t = `${withZero(dt.getHours())}:${withZero(dt.getMinutes())}:${withZero(
+  //   dt.getSeconds()
+  // )}.${dt.getMilliseconds()}`;
 
-  console.log("z");
-  console.group("action", action.type, "@", t);
-  console.log(" action", action);
-  console.log(" prev state", "\n", beforeState);
-  console.log(" next state", "\n", afterState);
-  console.groupEnd();
+  // console.log("z");
+  // console.group("action", action.type, "@", t);
+  // console.log(" action", action);
+  // console.log(" prev state", "\n", beforeState);
+  // console.log(" next state", "\n", afterState);
+  // console.groupEnd();
 
   return response;
 };
