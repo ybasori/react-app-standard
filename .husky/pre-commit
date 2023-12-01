@@ -7,12 +7,10 @@ staged_files=$(git diff --cached --name-only -- 'src/*.tsx' 'src/*.ts')
 git stash --keep-index
 
 # Run ESLint on staged files
-npx eslint $staged_files --fix || true
+npx eslint $staged_files --fix
 
 # Check ESLint exit status
 eslint_exit_status=$?
-
-git stash pop 
 
 # Pop stashed changes only if ESLint ran successfully
 if [ $eslint_exit_status -eq 0 ]; then
@@ -20,6 +18,9 @@ if [ $eslint_exit_status -eq 0 ]; then
 else
   echo "ESLint found errors. Stashed changes were not popped."
 fi
+
+
+git stash pop 
 
 # Exit with the ESLint exit status
 exit $eslint_exit_status
