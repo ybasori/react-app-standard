@@ -14,14 +14,13 @@ eslint_exit_status=$?
 
 # Pop stashed changes only if ESLint ran successfully
 if [ $eslint_exit_status -eq 0 ]; then
-  echo "ESLint success"
+  git stash pop
 else
-  echo "ESLint found errors. Stashed changes were not popped."
-  git stash pop 
+  git stash pop
 fi
 
 
-git stash pop 
+ 
 
 # Exit with the ESLint exit status
 exit $eslint_exit_status
