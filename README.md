@@ -1,10 +1,37 @@
-# Getting Started with Create React App
+# React app standard
 
-## Available Scripts
+React app standard is a project that uses ReactJS as the main framework. It contains standard library for collaborate with other developers. 
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Use git to clone project and install with package manager npm from [NodeJS](https://nodejs.org/en).
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development
+
+Run development
+```bash
+npm run start
+```
+
+Run development with analyzing sizing bundle
+```bash
+npm run start-analyzer
+```
+
+Run storybook
+```bash
+npm run storybook
+```
+
+Run analyze and fix code
+```bash
+npm run lint
+```
+
+## Production
+```bash
+npm run build
+```

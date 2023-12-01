@@ -33,6 +33,7 @@ const logger: Middleware = (api) => (next) => (action) => {
     dt.getSeconds()
   )}.${dt.getMilliseconds()}`;
 
+  console.log("z");
   console.group("action", action.type, "@", t);
   console.log(" action", action);
   console.log(" prev state", "\n", beforeState);

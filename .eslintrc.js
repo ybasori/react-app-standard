@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   rules: {
-    "no-console": "warn",
-    "no-unused-vars": "warn",
+    "no-console": "error",
+    "no-unused-vars": "error",
   },
 };
