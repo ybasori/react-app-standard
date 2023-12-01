@@ -6,38 +6,37 @@ import { persistStore } from "redux-persist";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import ErrorBoundary from "./Components/Layouts/ErrorBoundary/ErrorBoundary";
-// import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryLayout from "./Layouts/ErrorBoundaryLayout/ErrorBoundaryLayout";
 
 const persistor = persistStore(store);
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const About = React.lazy(() => import("./Pages/About/About"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
 const Register = React.lazy(() => import("./Pages/Register/Register"));
-const ErrorBoundary = () => <>Error Bang</>;
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-    errorElement: <ErrorBoundary />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-    errorElement: <ErrorBoundary />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+  ].map((route) => ({
+    ...route,
+    element: <ErrorBoundaryLayout>{route.element}</ErrorBoundaryLayout>,
+  }))
+);
 
 function App() {
   return (
@@ -45,18 +44,6 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <Suspense fallback={<div>Loading...</div>}>
           <RouterProvider router={router} />
-          {/* <BrowserRouter>
-            <Routes>
-              {router.map((item, idx) => (
-                <Route
-                  key={`route-${idx}`}
-                  path={item.path}
-                  element={item.element}
-                  errorElement={item.errorElement}
-                />
-              ))}
-            </Routes>
-          </BrowserRouter> */}
         </Suspense>
         <ToastContainer
           position="bottom-right"
@@ -74,18 +61,5 @@ function App() {
     </Provider>
   );
 }
-
-// function App() {
-//   return (
-//     <ErrorBoundary>
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <ErrorBoundary>
-//           <RouterProvider router={router} />
-//         </ErrorBoundary>
-//         {/* <Login /> */}
-//       </Suspense>
-//     </ErrorBoundary>
-//   );
-// }
 
 export default App;

@@ -13,7 +13,10 @@ module.exports = merge(common, {
     hot: true,
     static: "./public",
     client: {
-      overlay: false,
+      overlay: {
+        errors: false,
+        runtimeErrors: false,
+      },
     },
   },
   output: {
