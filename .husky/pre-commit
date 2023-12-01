@@ -7,7 +7,7 @@
 git stash --keep-index -u
 
 # Run ESLint on staged files
-npx eslint --fix --quiet -- "$(git diff --cached --name-only)"
+npm run lint
 
 # Check ESLint exit status
 eslint_exit_status=$?
