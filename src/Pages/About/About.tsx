@@ -1,5 +1,6 @@
-import Navbar from "@/Components/Organisms/Navbar/Navbar";
 import React from "react";
+
+import Navbar from "@/Components/Organisms/Navbar/Navbar";
 
 const About: React.FC = () => {
   return (

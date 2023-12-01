@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "./WeatherCard.module.css";
 import { IDataWeather } from "./WeatherCard.type";
 

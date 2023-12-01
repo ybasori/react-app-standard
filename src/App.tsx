@@ -1,15 +1,17 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import React, { Suspense } from "react";
 import { Provider } from "react-redux";
-import { store } from "./store";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+
 import ErrorBoundaryLayout from "./Layouts/ErrorBoundaryLayout/ErrorBoundaryLayout";
 import ProtectedRoute from "./Layouts/ProtectedRoute/ProtectedRoute";
-import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import ProtectedRouteNoAuth from "./Layouts/ProtectedRouteNoAuth/ProtectedRouteNoAuth";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import { store } from "./store";
 
 const persistor = persistStore(store);
 const Home = React.lazy(() => import("./Pages/Home/Home"));

@@ -1,11 +1,11 @@
-import useAuth from "@/Hooks/useAuth";
+import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import * as yup from "yup";
+
+import useAuth from "@/Hooks/useAuth";
 
 interface IFormInput {
   name: string;

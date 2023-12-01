@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import styles from "./InputSearch.module.css";
 import { useDispatch } from "react-redux";
+
 import { AppDispatch } from "@/store";
+
+import styles from "./InputSearch.module.css";
 
 const InputSearch = () => {
   const dispatch: AppDispatch = useDispatch();

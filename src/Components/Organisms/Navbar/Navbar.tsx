@@ -1,6 +1,7 @@
-import useAuth from "@/Hooks/useAuth";
 import React from "react";
 import { NavLink } from "react-router-dom";
+
+import useAuth from "@/Hooks/useAuth";
 
 const Navbar = () => {
   const { auth, onLogout } = useAuth();

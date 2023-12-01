@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./ListWeather.module.css";
+
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { IDataWeather } from "../WeatherCard/WeatherCard.type";
+import styles from "./ListWeather.module.css";
 
 const ListWeather: React.FC<{ data: IDataWeather[] }> = ({ data }) => {
   return (

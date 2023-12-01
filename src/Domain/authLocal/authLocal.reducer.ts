@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { IAuthLocal } from "./authLocal.types";
 
 const initialState: IAuthLocal = {

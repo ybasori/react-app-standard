@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "./Sun.module.css";
 
 const Sun: React.FC<{ width?: number; height?: number }> = ({

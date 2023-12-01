@@ -28,10 +28,11 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ["@typescript-eslint", "react", "simple-import-sort"],
   rules: {
     "no-console": "error",
     "no-unused-vars": "error",
     "no-extra-boolean-cast": "off",
+    "simple-import-sort/imports": "error",
   },
 };

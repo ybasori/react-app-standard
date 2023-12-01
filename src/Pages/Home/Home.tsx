@@ -1,5 +1,6 @@
-import Navbar from "@/Components/Organisms/Navbar/Navbar";
 import React, { useState } from "react";
+
+import Navbar from "@/Components/Organisms/Navbar/Navbar";
 
 const Home: React.FC = () => {
   const [count, setCount] = useState(0);
