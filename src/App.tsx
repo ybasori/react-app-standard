@@ -7,12 +7,30 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ErrorBoundaryLayout from "./Layouts/ErrorBoundaryLayout/ErrorBoundaryLayout";
+import ProtectedRoute from "./Layouts/ProtectedRoute/ProtectedRoute";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import ProtectedRouteNoAuth from "./Layouts/ProtectedRouteNoAuth/ProtectedRouteNoAuth";
 
 const persistor = persistStore(store);
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 const About = React.lazy(() => import("./Pages/About/About"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
 const Register = React.lazy(() => import("./Pages/Register/Register"));
+const Profile = React.lazy(() => import("./Pages/Profile/Profile"));
+
+interface IScopeRoute {
+  path?: string;
+  children?: IScopeRoute[];
+  element: React.ReactNode;
+}
+
+const scopeRoute: (route: IScopeRoute) => IScopeRoute = (route) => {
+  return {
+    ...route,
+    ...(!!route.children ? { children: route.children.map(scopeRoute) } : {}),
+    element: <ErrorBoundaryLayout>{route.element}</ErrorBoundaryLayout>,
+  };
+};
 
 const router = createBrowserRouter(
   [
@@ -25,17 +43,34 @@ const router = createBrowserRouter(
       element: <About />,
     },
     {
-      path: "/login",
-      element: <Login />,
+      path: "/",
+      element: <ProtectedRouteNoAuth />,
+      children: [
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+      ],
     },
     {
-      path: "/register",
-      element: <Register />,
+      path: "/",
+      element: <ProtectedRoute />,
+      children: [
+        {
+          path: "profile",
+          element: <Profile />,
+        },
+      ],
     },
-  ].map((route) => ({
-    ...route,
-    element: <ErrorBoundaryLayout>{route.element}</ErrorBoundaryLayout>,
-  }))
+    {
+      path: "/*",
+      element: <PageNotFound />,
+    },
+  ].map(scopeRoute)
 );
 
 function App() {

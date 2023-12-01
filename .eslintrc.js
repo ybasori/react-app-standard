@@ -32,5 +32,6 @@ module.exports = {
   rules: {
     "no-console": "error",
     "no-unused-vars": "error",
+    "no-extra-boolean-cast": "off",
   },
 };

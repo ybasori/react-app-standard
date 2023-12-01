@@ -20,10 +20,13 @@ React app standard is a project that uses ReactJS as the main framework. It cont
 - React Router Dom
 - Axios
 
-### Methods
+### Existing code
 - Atomic design directory structure
 - Code remember me login
 - Cannot commit a code if not a clean code
+- Page not found
+- Protected Route
+- Error Boundary
 
 ## Installation
 
