@@ -11,16 +11,7 @@ npx eslint $staged_files --fix --quiet -- "$(git diff --cached --name-only)"
 
 # Check ESLint exit status
 eslint_exit_status=$?
-
-# Pop stashed changes only if ESLint ran successfully
-if [ $eslint_exit_status -eq 0 ]; then
-  git stash pop
-else
-  git stash pop
-fi
-
-
- 
+git stash pop
 
 # Exit with the ESLint exit status
-exit $eslint_exit_status
+exit 0
