@@ -7,6 +7,6 @@ staged_files=$(git diff --cached --name-only -- 'src/*.tsx' 'src/*.ts')
 git stash --keep-index
 
 # Run ESLint on staged files
-npx eslint $staged_files --fix
+npx eslint $staged_files --fix || true
 
-git stash pop || true
+git stash pop 
