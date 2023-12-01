@@ -4,14 +4,15 @@
 # Get the list of staged files
 # staged_files=$(git diff --cached --name-only -- 'src/*.tsx' 'src/*.ts')
 
-git stash --keep-index
+git stash --keep-index -u
 
 # Run ESLint on staged files
-npx eslint $staged_files --fix --quiet -- "$(git diff --cached --name-only)"
+npx eslint --fix --quiet -- "$(git diff --cached --name-only)"
 
 # Check ESLint exit status
 eslint_exit_status=$?
+
 git stash pop
 
 # Exit with the ESLint exit status
-exit 0
+exit $eslint_exit_status
